@@ -8,9 +8,10 @@ pkgbase = hid-apple-patched-git-dkms
 	license = GPL2
 	makedepends = git
 	depends = dkms
+	backup = etc/modprobe.d/hid_apple.conf
 	source = git+https://github.com/free5lot/hid-apple-patched#branch=master
 	source = hid-apple-patched.conf
-	source = hid_apple_pclayout.conf
+	source = hid_apple.conf
 	source = dkms.conf
 	source = 90-mkinitcpio-install-apple-hid.hook
 	sha256sums = SKIP

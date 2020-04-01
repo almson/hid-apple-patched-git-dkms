@@ -13,7 +13,7 @@ do_install() {
 
 ==> hid-apple-patched install/upgrade note:
 ------------------------------------------------------------------------------
-Configuration file is installed to /etc/modprobe.d/hid_apple_pclayout.conf.
+Configuration file is installed to /etc/modprobe.d/hid_apple.conf.
 By default PC-like layout is enabled. You can tweak it to suit your needs
 according to https://github.com/free5lot/hid-apple-patched#configuration.
 

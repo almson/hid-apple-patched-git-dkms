@@ -17,10 +17,11 @@ depends=('dkms')
 makedepends=('git')
 
 install=hid-apple-patched-dkms.install
+backup=(etc/modprobe.d/hid_apple.conf)
 
 source=("git+https://github.com/free5lot/$_pkgname#branch=master"
         "hid-apple-patched.conf"
-        "hid_apple_pclayout.conf"
+        "hid_apple.conf"
         "dkms.conf"
         "90-mkinitcpio-install-apple-hid.hook")
 
@@ -46,7 +47,7 @@ package() {
       -e "s/@PKGVER@/${pkgver}/" \
       -i "${pkgdir}"/usr/src/${_pkgname}-${pkgver}/dkms.conf
 
-  install -Dm644 hid_apple_pclayout.conf "${pkgdir}"/etc/modprobe.d/hid_apple_pclayout.conf
+  install -Dm644 hid_apple.conf "${pkgdir}"/etc/modprobe.d/hid_apple.conf
   install -Dm644 hid-apple-patched.conf "$pkgdir"/etc/depmod.d/hid-apple-patched.conf
 
   install -Dm644 90-mkinitcpio-install-apple-hid.hook "$pkgdir"/usr/share/libalpm/hooks/90-mkinitcpio-install-apple-hid.hook
